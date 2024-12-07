@@ -13,6 +13,25 @@
 //  після оголошення класу для перевірки коректності роботи.У консоль будуть виведені результати їх роботи.
 //  Будь ласка, нічого там не змінюй.
 
+class Storage {
+  #items;
+  constructor(items) {
+    this.#items = items;
+  }
+  getItems() {
+    return this.#items;
+  }
+  addItem(newItem) {
+    return this.#items.push(newItem);
+  }
+  removeItem(itemToRemove) {
+    const index = this.#items.indexOf(itemToRemove);
+    if (index !== -1) {
+      this.#items.splice(index, 1);
+    }
+  }
+}
+
 const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
 
